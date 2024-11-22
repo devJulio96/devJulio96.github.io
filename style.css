@@ -1,0 +1,80 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-size: medium;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    margin-top: 1.2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculadora {
+    width: fit-content;
+    display: flex;
+    border: 3px solid;
+    border-radius: 10px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(17, 17, 17);
+}
+
+.display{
+    width: 22.9rem;
+    height: 100px;
+    display: flex;
+    color: white;
+    font-size: 30px;
+    overflow: hidden;
+    align-items: end;
+    padding-right: 0.5rem;
+    justify-content: right;
+    margin: 2rem 0rem 1rem;
+    overflow-wrap: break-word;
+    border: solid 1px rgb(17, 17, 17);
+    background-color: rgb(53, 83, 63);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.dteclas {
+    width: 417px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.tecla {
+    margin: 1px;
+    width: 90.25px;
+    height: 50px;
+    display: flex;
+    cursor: pointer;
+    border: solid 0.5px;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+}
+
+.oper {
+    color: #fff;
+    border: 1px solid black;
+    background-color: rgb(84, 194, 221);
+}
+
+.limp{
+    color: #fff;
+    border: 1px solid black;
+    background-color: rgb(255, 40, 40);
+}
+
+.apag{
+    margin: 1px;
+    width: 275px;
+    display: flex;
+}
