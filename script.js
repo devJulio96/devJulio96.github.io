@@ -13,36 +13,38 @@ let operador;
 const obterRes = () => {
     let resultado;
 
-    if(display.innerHTML.includes(".")){
-        decimal = false;
-    }
-
-    switch (operador) {
-        case "+":
-            resultado = (valores[0] + valores[1]);
-            break;
-        case "-":
-            resultado = (valores[0] - valores[1]);
-            break;
-        case "x":
-            resultado = (valores[0] * valores[1]);
-            break;
-        case "/":
-            resultado = (valores[0] / valores[1]);
-            break;
-    }
+    if(valores[1] != undefined){
+        if(display.innerHTML.includes(".")){
+            decimal = false;
+        }
     
-    resultado = Math.fround(resultado).toFixed(2);
-    display.innerHTML = resultado;
-
-    if(display.innerHTML.includes("Infinity") ||display.innerHTML.includes("NaN")){
-        display.innerHTML = "#####Erro#####"
-        operador = undefined;
-        valores.pop();
-    } else{
-        operador = undefined;
-        valores.pop();
-        valores[0] = Number(display.innerHTML);
+        switch (operador) {
+            case "+":
+                resultado = (valores[0] + valores[1]);
+                break;
+            case "-":
+                resultado = (valores[0] - valores[1]);
+                break;
+            case "x":
+                resultado = (valores[0] * valores[1]);
+                break;
+            case "/":
+                resultado = (valores[0] / valores[1]);
+                break;
+        }
+        
+        resultado = Math.fround(resultado).toFixed(2);
+        display.innerHTML = resultado;
+    
+        if(display.innerHTML.includes("Infinity") ||display.innerHTML.includes("NaN")){
+            display.innerHTML = "#####Erro#####"
+            operador = undefined;
+            valores.pop();
+        } else{
+            operador = undefined;
+            valores.pop();
+            valores[0] = Number(display.innerHTML);
+        }
     }
 }
 
@@ -59,7 +61,6 @@ teclasNum.forEach((el)=>{
         
         if(valores[0] >= 0){
             valores = display.innerHTML.split(/\-|\/|\x|\+/).map(Number);
-            console.log(valores);
         } else {
             if(operador == undefined){
                 valores = display.innerHTML.split(/\/|\x|\+/).map(Number);
